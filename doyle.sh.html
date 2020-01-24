@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <!-- HEAD -->
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/default.min.css">
+
+  <style>
+	  body {
+   	  font-family: Droid Sans Mono;
+      font-size: 14px;
+      background-color: #2f2f2f;
+    }
+    a {
+      font-size: 16px;
+      text-decoration: none;
+      color: #f0f0f0;
+    }
+    code {
+      border-radius: 5px;
+    }
+    div {
+      display: inline-block;
+      width: 49.5%;
+      vertical-align: top;
+    }
+    h1 {
+      font-size: 40px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      width: 100%;
+      color: #f0f0f0;
+    }
+    .container {
+      padding: 15px;
+      max-width: 600px;
+    }
+  </style>
+
+  <!-- JS -->
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $.get("/doyle.sh", (res)=>{
+		  $('.bash').text(res);
+      hljs.initHighlighting();
+      $.get("/doyle.sh.out", (res)=>{
+		    $('.out').text(res);
+      });
+		});
+  </script>
+
+  <!-- MARKUP -->
+  <body>
+    <h1>doyle.sh</h1>
+    <div><pre><code class="bash"></code></pre></div>
+    <div><pre><code class="out"></code></pre></div>
+    <center><a href=https://gitlab.com/rdoyle/doyle.sh>code on gitlab</a></center>
+  </body>
+</html>
+
