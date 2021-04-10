@@ -44,17 +44,17 @@
     $.get("/doyle.sh", (res)=>{
 		  $('.bash').text(res);
       hljs.initHighlighting();
-      $.get("/doyle.sh.out", (res)=>{
-		    $('.out').text(res);
-      });
 		});
+    $.get("/doyle.sh.out", (res)=>{
+		  $('.plaintext').text(res);
+    });
   </script>
 
   <!-- MARKUP -->
   <body>
     <h1>doyle.sh</h1>
     <div><pre><code class="bash"></code></pre></div>
-    <div><pre><code class="out"></code></pre></div>
+    <div><pre><code class="plaintext"></code></pre></div>
     <center><a href=https://gitlab.com/rdoyle/doyle.sh>code on gitlab</a></center>
   </body>
 </html>
