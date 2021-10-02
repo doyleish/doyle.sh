@@ -6,7 +6,7 @@
 # ===========
 FIRSTNAME="Ryan"
 LASTNAME="Doyle"
-OCCUPATION="Infrastructre and Software Engineer"
+OCCUPATION="Infrastructure and Software Engineer"
 LOCATION="the San Francisco Bay Area"
 
 LANGUAGES="terraform golang python bash typescript postgresql"
@@ -24,24 +24,27 @@ done
 # Round off b/c integer math and why not ;)
 years=$(expr $years + 1)
 
+# Because occupation names change and English is silly
+article="" && [[ $OCCUPATION == @("A"|"E"|"I"|"O"|"U")* ]] && article="an" || article="a"
+
 # ===========
 # Intro blurb
 # ===========
 intro(){
     clear
-    echo;echo;echo
+    echo
     cat << EOF
-   ______              __            __   
-  / ____ \\   _________/ /___  __  __/ /__ 
+   ______              __            __
+  / ____ \\   _________/ /___  __  __/ /__
  / / __ \\/  / ___/ __  / __ \\/ / / / / _ \\
 / / /_/ /  / /  / /_/ / /_/ / /_/ / /  __/
-\ \\__,_/  /_/   \\__,_/\\____/\\__, /_/\\___/ 
- \\____/                    /____/         
+\ \\__,_/  /_/   \\__,_/\\____/\\__, /_/\\___/
+ \\____/                    /____/
 EOF
-	echo 
+	echo
     cat << EOF
 Hello, My name is $FIRSTNAME.
-I am an $OCCUPATION currently
+I am $article $OCCUPATION currently
 working in $LOCATION.
 EOF
     echo
@@ -68,7 +71,7 @@ And finally some unsolicited advice:
 
 https://rdoyle.net
 EOF
-    echo;echo;echo
+    echo;echo
 }
 
 # If no args passed, default to intro
@@ -76,5 +79,3 @@ if [ $# -eq 0 ]; then
     intro
     exit
 fi
-
-"$@"
