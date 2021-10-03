@@ -74,8 +74,31 @@ EOF
     echo;echo
 }
 
+setup(){
+    set -e
+    echo "Looks like you've stumbled upon the dotfile setup..."
+    echo -n "Where would you like to clone the config package into? [$HOME/.rdconfig]: "
+    read SETUP_PATH
+    if [ -z "$SETUP_PATH" ]; then
+        SETUP_PATH=$HOME/.rdconfig
+    fi
+
+    git clone https://gitlab.com/rdoyle/config.git $SETUP_PATH
+    echo -n "Config cloned! Would you like to run the setup? [Y/n]: "
+    read CHOICE
+    if [ ! -z "$CHOICE" ] && [ ! "CHOICE" == "Y" ] && [ ! "CHOICE" == "y" ]; then
+        echo "Goodbye!"
+        return 1
+    fi
+    cd $SETUP_PATH
+    ./setup
+    echo "Setup Done!"
+}
+
 # If no args passed, default to intro
 if [ $# -eq 0 ]; then
     intro
     exit
 fi
+
+$1
