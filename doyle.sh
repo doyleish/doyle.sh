@@ -1,77 +1,117 @@
 #!/bin/bash
 ## Ryan Doyle
-
 # ===========
 # Global Vars
 # ===========
 FIRSTNAME="Ryan"
 LASTNAME="Doyle"
-OCCUPATION="Infrastructure and Software Engineer"
-LOCATION="the San Francisco Bay Area"
+OCCUPATION="DevOps Engineer"
+LOCATION="the SF Bay Area"
 
-LANGUAGES="terraform golang python bash typescript postgresql"
+LANGUAGES="python bash nodejs golang sql etc..."
+TECH="gcp aws kubernetes salt dns terraform "
+
 EMAIL="ryan@rdoyle.net"
+WEBSITE="https://rdoyle.net"
+LINKEDIN="https://linkedin.com/in/rcdoyle"
+
+COLUMNS=3
+
+# ================
+# Helper Functions
+# ================
+_table(){
+    columns=$1
+    shift 1
+    offset=$1
+    shift 1
+    wordlist=$@
+
+    column_width=0
+    for word in $wordlist; do
+        wordlen=$(echo -n $word | wc -c)
+        [ $wordlen -gt $column_width ] && column_width=$wordlen
+    done
+    column_width=$(expr $column_width + $offset)
+
+    index=0
+    for word in $wordlist; do
+        [ $(expr $index % $columns) -eq 0 ] && echo -n "│ "
+        wordlen=$(echo -n $word | wc -c)
+        padding=$(expr $column_width - $wordlen)
+        echo -n $word
+        for x in $(seq 1 $padding); do echo -n " "; done
+        index=$(expr $index + 1)
+        [ $(expr $index % $columns) -eq 0 ] && echo
+    done
+    [ $(expr $index % $columns) -ne 0 ] && echo
+}
 
 # ===============
 # Calculated Vars
 # ===============
 start_unix=1350309600 # Began working in software in 2012
 now_unix=$(date +%s)
-years=$(expr $now_unix - $start_unix)
-for div in 60 60 24 365; do
-    years=$(expr $years / $div)
-done
-# Round off b/c integer math and why not ;)
-years=$(expr $years + 1)
-
-# Because occupation names change and English is silly
-article="" && [[ $OCCUPATION == @("A"|"E"|"I"|"O"|"U")* ]] && article="an" || article="a"
+years_experience=$(awk "BEGIN {printf \"%0.2f\", ($now_unix-$start_unix)/31536000}")
 
 # ===========
 # Intro blurb
 # ===========
 intro(){
-    clear
-    echo
+    #clear
     cat << EOF
-   ______              __            __
-  / ____ \\   _________/ /___  __  __/ /__
- / / __ \\/  / ___/ __  / __ \\/ / / / / _ \\
-/ / /_/ /  / /  / /_/ / /_/ / /_/ / /  __/
-\ \\__,_/  /_/   \\__,_/\\____/\\__, /_/\\___/
- \\____/                    /____/
-EOF
-	echo
-    cat << EOF
-Hello, My name is $FIRSTNAME.
-I am $article $OCCUPATION currently
-working in $LOCATION.
-EOF
-    echo
+______________
+# Ryan Doyle #  $OCCUPATION currently working in $LOCATION
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+About:
+┌──────────────
+│ I have been in large-scale software and web infrastructure
+│ for the past $years_experience years. I love rock-solid software architecture.
 
-    cat << EOF
-I have been working in large-scale software and web infrastructure
-for the past $years years.  I'm an avid supporter of open-source
-development and am particularly interested in DevOps and dev strategies
-in general.
+Experience:
+┌──────────────
+│ - Productivity Team @ Panther Labs ────────────────────────────────── 2022 -> Present
+│   * Product Architecture   * IaC implementation       * CI implementation
+│   * Developer tools        * Deployment automation
+│
+│ - DevOps Lead @ Clear Labs ────────────────────────────────────────── 2021 -> 2022
+│   * IaC implementation     * Deployment automation    * Hybrid onPrem/cloud
+│   * Hiring and PM          * Monitoring               * Configuration management
+│
+│ - Principal Eng (Employee 1) @ Imagine Financial ──────────────────── 2019 -> 2021
+│   * Backend development    * Cloud infra development  * Security
+│   * Hiring                 * Functional, launched product in 6 months
+│
+│ - Senior Site-Reliability-Engineer @ LinkedIn ─────────────────────── 2016 -> 2019
+│   * 'Recruiter' product    * Monitoring development   * Containerization
+│   * Infrastructure design  * On-Call rotation         * Hiring
+│
+│ - Linux Team @ MTU ────────────────────────────────────────────────── 2012 -> 2015
+│   * Device management      * Spacewalk, Puppet admin  * RPM/YUM software packaging
 
-I am proficient in a variety of programming languages and tools. The ones I
-favor most include:
-EOF
-    for lang in $LANGUAGES; do
-        echo " - $lang"
-    done
-    echo
+Tools and Tech:
+┌──────────────
+$(_table 3 -3 $TECH)
 
-    cat << EOF
-And finally some unsolicited advice:
-1. Don't blindly run random scripts you find on the internet (shame 🔔).
-2. Avoid turning your workstation into critical infra.
-3. Automate anything and everything.
+Languages:
+┌──────────────
+$(_table 3 1 $LANGUAGES)
+
+Education:
+┌──────────────
+│ * BA in CS from Michigan Technological University
+
+Contact Info:
+┌──────────────
+│ $EMAIL
+│ $WEBSITE
+│ $LINKEDIN
+
+Don't run random scripts you find on the internet (shame 🔔).
 
 https://rdoyle.net
 EOF
-    echo;echo
+    echo
 }
 
 setup(){
@@ -88,7 +128,7 @@ setup(){
     read CHOICE
     if [ ! -z "$CHOICE" ] && [ ! "CHOICE" == "Y" ] && [ ! "CHOICE" == "y" ]; then
         echo "Goodbye!"
-        return 1
+        return 0
     fi
     cd $SETUP_PATH
     ./setup
