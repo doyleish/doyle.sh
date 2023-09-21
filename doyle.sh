@@ -6,10 +6,11 @@
 FIRSTNAME="Ryan"
 LASTNAME="Doyle"
 OCCUPATION="DevOps Engineer"
-LOCATION="the SF Bay Area"
+LOCATION="the Denver area"
+REMOTESTATUS="fully remote"
 
-LANGUAGES="python bash nodejs golang sql etc..."
-TECH="gcp aws kubernetes salt dns terraform "
+LANGUAGES="python bash golang sql js etc..."
+TECH="aws gcp kubernetes cd iac network"
 
 EMAIL="ryan@rdoyle.net"
 WEBSITE="https://rdoyle.net"
@@ -61,16 +62,16 @@ intro(){
     #clear
     cat << EOF
 ______________
-# Ryan Doyle #  $OCCUPATION currently working in $LOCATION
+# Ryan Doyle #  $OCCUPATION currently working $REMOTESTATUS from $LOCATION
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 About:
 ┌──────────────
-│ I have been in large-scale software and web infrastructure
-│ for the past $years_experience years. I love rock-solid software architecture.
+│ I have been in large-scale software and web infrastructure for 
+│ the past $years_experience years. I love rock-solid software architecture.
 
 Experience:
 ┌──────────────
-│ - Productivity Team @ Panther Labs ────────────────────────────────── 2022 -> Present
+│ - Automation Team @ Panther Labs ──────────────────────────────────── 2022 -> Present
 │   * Product Architecture   * IaC implementation       * CI implementation
 │   * Developer tools        * Deployment automation
 │
@@ -108,8 +109,6 @@ Contact Info:
 │ $LINKEDIN
 
 Don't run random scripts you find on the internet (shame 🔔).
-
-https://rdoyle.net
 EOF
     echo
 }
