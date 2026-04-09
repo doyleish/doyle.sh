@@ -11,7 +11,7 @@ LASTNAME="Doyle"
 OCCUPATION="Software Engineer"
 LOCATION="the United States"
 REMOTESTATUS="fully remote"
-DEGREE="Bachelors in Computer Science"
+DEGREE="Bachelor's in Computer Science"
 SCHOOL="Michigan Technological University"
 
 LANGUAGES="golang python rust bash js/ts +more"
@@ -28,11 +28,11 @@ years_experience=$(bc <<< "scale=2; ($now_unix-$start_unix)/31536000")
 read -d '#' TEXT_INTRO << EOF
 $OCCUPATION currently working $REMOTESTATUS from $LOCATION.
 I have been in large-scale software engineering and infrastructure for the 
-past $years_experience years.  Live and breathe linux, cloud, and backend application 
+past $years_experience years.  Strong focus on Linux, cloud, and backend application 
 development. Fluent enough to contribute all over including application,
 infrastructure, and tooling.  Deep, ingrained experience in several
-industries including social media, biotech(gene sequencing), security,
-and crypto(ethereum).  Big into security and programming languages.
+industries including social media, biotech (gene sequencing), security,
+and crypto (Ethereum).  Big into security and programming languages.
 EOF
 
 # ================
@@ -147,7 +147,7 @@ $(echo "$TEXT_INTRO" | _line_prefixed "> ")
 
 ### Staff Software Engineer @ Caldera.xyz
 
-_2024 -> Present_, Caldera is an Ethereum infrastructure provider primarily offering ethereum rollups
+_2024 -> Present_, Caldera is an Ethereum infrastructure provider primarily offering Ethereum rollups
 as a service.
 
 **Responsibilities** involve leading the greenfield development of several areas of the company relating
@@ -160,8 +160,7 @@ as a service via IaC, deployment automation, monitoring, security, and all aroun
   infrastructure; providing deep customizability for the different stacks supported by the product.
 - Kubernetes implementation as a multi-tenant environment, hosting hundreds of customers in a secure
   and cost-effective manner
-- Implementing workflow orchestration and workflows to accurately and easily deploy and operate customer
-  infrastructure
+- Implementing workflow orchestration to accurately and easily deploy and operate customer infrastructure
 - Evangelizing security topics in the engineering team and leading several efforts both in securing
   customer infra, key management, and operational security within engineering
 - Deeply debugging vendored software and focused contributions where necessary
@@ -201,7 +200,6 @@ engineering team with tooling for testing, access, and deployment.
 
 _2021 -> 2022_,  ClearLabs offers a next-generation gene-sequencing solution for private and public
 sector use.  Automating whole genome sequencing, clinical virology sequencing, and food safety testing.
-from hundreds of native integrations, and fully customizable through python or no-code options.
 
 **Responsibilities** involved primarily developing and automating hybrid on-prem and cloud infrastructure.
 
@@ -223,9 +221,9 @@ from hundreds of native integrations, and fully customizable through python or n
 _2019 -> 2021_, Imagine was a payment-processing startup aimed at merchant friendliness through
 lower-fee payment routing. 
 
-Employee #1, led development of product backend in golang including api and db, as well as
+Employee #1.  Led development of product backend in golang including api and db, as well as
 cloud infrastructure in aws. **Notably** achieving a launched, functional product processing payments in
-the US for real merchants in 6 months.
+the US for live merchants in 6 months.
 
 **Tools and tech** leveraged include _aws, postgres, grpc, ach_
 
@@ -233,14 +231,14 @@ the US for real merchants in 6 months.
 
 ### Senior Site Reliability Engineer @ LinkedIn
 
-_2016 -> 2019_, Worked on the Jobs and Companies products, and then later Recruiter at LinkedIn
+_2016 -> 2019_, Engineer on the Jobs and Companies products, and then later on the Recruiter product at LinkedIn
 
 **Responsibilities** involved developing robust infrastructure for extremely high-throughput web products.
 Also bettering observability and monitoring of those products and supporting them on-call.
 
 **Notable projects** included
 
-- Help designing a new iteration of the larger talent product and sunsetting the legacy recruiter product
+- Helped designing a new iteration of the larger talent product and sunsetting the legacy recruiter product
 - Fully custom uptime reporting tool for recruiter, used to drive department efforts and exec reporting
 - Novel dashboard generating utility for engineering use
 - JVM continuous monitoring to drive tuning and analysis
@@ -266,7 +264,7 @@ satellite/spacewalk
 
 ### Various other positions
 
-- Contract consulting @ Self
+- Contract consulting
 - IT Helpdesk @ Michigan Tech
 - IT Intern @ Asahi Kasei Plastics NA
 
