@@ -28,8 +28,8 @@ years_experience=$(bc <<< "scale=2; ($now_unix-$start_unix)/31536000")
 # Re-usable introduction blurb
 read -d '#' TEXT_INTRO << EOF
 $OCCUPATION currently working $REMOTESTATUS from $LOCATION.
-I have been in large-scale software and infrastructure engineering for the 
-past $years_experience years.  Strong focus on Linux, cloud, and backend application 
+I have been in large-scale software and infrastructure engineering for the
+past $years_experience years.  Strong focus on Linux, cloud, and backend application
 development.  Comfortable contributing all over including application,
 infrastructure, and tooling.  Deep, ingrained experience in several
 industries including social media, biotech (gene sequencing), security,
@@ -89,25 +89,26 @@ $(echo "$TEXT_INTRO" | _line_prefixed "│ ")
 
 Experience:
 ┌──────────────
-│ - Staff SWE @ Caldera ──────────────────────────────────────────────── 2024 -> Present
-│   * Multi-tenant infra     * IaC implementation       * Appsec + Opsec
-│   * Deployment automation  * Kubernetes (cluster arch, lifecycle, updates, etc)
+│ - Staff SWE @ Caldera.xyz ───────────────────────────────────────── 2024 -> Present
+│   * RaaS / blockchain infra  * Multi-tenant Kubernetes     * IaC
+│   * Workflow development     * Appsec/Opsec
 │
-│ - Staff SWE @ Panther Labs ─────────────────────────────────────────── 2022 -> 2024
-│   * Product Architecture   * IaC implementation       * CI implementation
-│   * Developer tools        * Deployment automation    * App Dev
+│ - Staff SWE @ Panther.io ───────────────────────────────────────────── 2022 -> 2024
+│   * CI/Deployment Ownership  * Eng tooling                 * Backend Development
+│   * Product Architecture     * IaC
 │
-│ - DevOps Lead @ Clear Labs ─────────────────────────────────────────── 2021 -> 2022
-│   * IaC implementation     * Deployment automation    * Hybrid onPrem/cloud
+│ - DevOps Lead @ ClearLabs ──────────────────────────────────────────── 2021 -> 2022
+│   * Hybrid cloud + on-prem   * Kubernetes                  * Deployment automation
+│   * Networking               * Cloud GPU workloads         * Hardware and OS
 │
-│ - Principal Eng (Employee 1) @ Imagine Financial ───────────────────── 2019 -> 2021
-│   * Backend & Infra dev    * Functional, launched product in 6 months
+│ - Principal Eng @ Imagine (hire #1) ────────────────────────────────── 2019 -> 2021
+│   * Backend Development      * AWS Product Infrastructure  * Live in ~6 months
 │
 │ - Senior SRE @ LinkedIn ────────────────────────────────────────────── 2016 -> 2019
-│   * 'Recruiter' product    * Monitoring development   * Infrastructure design
+│   * Jobs / Recruiter SRE     * Uptime monitoring           * Product architecture
 │
-│ - Linux Team @ Michigan Technological University ───────────────────── 2012 -> 2015
-│   * Device management      * Spacewalk, Puppet admin  * RPM/YUM packaging
+│ - Linux Team @ Michigan Tech ───────────────────────────────────────── 2012 -> 2016
+│   * Device management        * RPM/YUM repos + packaging   * Puppet + Satellite
 
 Tools and Tech:
 ┌──────────────
