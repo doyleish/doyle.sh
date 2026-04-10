@@ -10,7 +10,7 @@
 >  programming languages.
 
 ## Experience
-### Staff Software Engineer @ Caldera.xyz ──────────────── 2024 → Present
+### Staff Software Engineer @ Caldera.xyz ────────────── 2024 → Present
 > Caldera is an Ethereum blockchain infrastructure provider offering rollups-as-a-service via
 > a variety of rollup implementations and technologies.
 
@@ -48,7 +48,7 @@ automation, monitoring, security, and product expansion.
 
 ---
 
-### DevOps Lead @ ClearLabs ──────────────── 2021 → 2022
+### DevOps Lead @ ClearLabs ───────────────────── 2021 → 2022
 > ClearLabs offers gene sequencing products for public and private sector.
 > They engage in whole genome, clinical virology, and food safety testing.
 
@@ -64,7 +64,7 @@ automation, monitoring, security, and product expansion.
 
 ---
 
-### Principal Engineer @ Imagine Financial ──────────────── 2019 → 2021
+### Principal Engineer @ Imagine Financial ─────────────── 2019 → 2021
 > Imagine Financial was a payment processing startup focused on merchant-friendly, lower-fee
 > payment routing.
 
@@ -78,7 +78,7 @@ automation, monitoring, security, and product expansion.
 
 ---
 
-### Senior Site Reliability Engineer @ LinkedIn ──────────────── 2016 → 2019
+### Senior Site Reliability Engineer @ LinkedIn ────────────── 2016 → 2019
 > Jobs and Companies, then Recruiter products at LinkedIn
 
 **Scope**: High-throughput web products: infrastructure design, monitoring and observability ownership,
@@ -96,7 +96,7 @@ and incident response.
 
 ---
 
-### Linux Team @ Michigan Technological University ──────────────── 2012 → 2016
+### Linux Team @ Michigan Technological University ─────────── 2012 → 2016
 > Linux admininistration at Michigan Tech. Supporting computer labs, faculty/staff desktops,
 > school datacenter, and research systems.
 
