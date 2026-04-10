@@ -149,7 +149,7 @@ automation, monitoring, security, and product expansion.
 - Owned **IaC** for supported software stacks and supporting services with deep per-stack customization
 - Owned Multi-tenant **Kubernetes** clusters hosting hundreds of customers with strong security, tenant isolation, and cost discipline
 - **Workflow orchestration** for reliable deployment and operation across customer environments
-- Evangelized **security** within engineering. Drove customer infra hardening, key management improvements, and engineering operational security
+- Championed **security** within engineering. Drove customer infra hardening, key management improvements, and engineering operational security
 - Deep **debugging** and targeted fixes in vendored components as needed
 - Led **ZKsync** support; first RaaS provider to bring that stack to market
 
